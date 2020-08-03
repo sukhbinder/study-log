@@ -1,0 +1,9 @@
+<h1>Study Log</h1>
+<ul>
+{% for object in object_list %}
+<li><a href="{{ exp.get_absolute_url }}">{{object.date}} - {{object.user|upper}} </a>- {{object.subject}}  - {{object.description}} - {{object.next_review_date}} </li>
+
+{% endfor %}
+</ul>
+
+<a href={% url "create-view"  %}> Add Log</a>
