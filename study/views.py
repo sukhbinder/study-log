@@ -7,7 +7,7 @@ from study.models import StudyLog
 class IndexListView(ListView):
     model = StudyLog
     template_name = "study/index.html"
-    order_by = "-date"
+    oordering = ['-date']
 
 
 class LogCreationView(CreateView):
