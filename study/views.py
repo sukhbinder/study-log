@@ -7,7 +7,8 @@ from study.models import StudyLog
 class IndexListView(ListView):
     model = StudyLog
     template_name = "study/index.html"
-    oordering = ['-date']
+    ordering = ['-date']
+
 
 
 class LogCreationView(CreateView):
@@ -31,3 +32,15 @@ class UserListView(ListView):
     def get_queryset(self):
         user = self.kwargs['user']
         return StudyLog.objects.filter(user__iexact=user).order_by('-date')
+
+
+class StudyUpdateView(UpdateView):
+    model = StudyLog
+    template_name = "study/update_form.html"
+
+    fields = "__all__"
+  
+    # can specify success url 
+    # url to redirect after successfully 
+    # updating details 
+    success_url ="/"

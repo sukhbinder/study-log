@@ -1,3 +1,11 @@
-<h1>{{pk}}</h1>
+{% extends 'base.html' %}
 
-<li>{{object.date}} - {{object.subject}}  - {{object.description}} </li>
+{% block title %}  Detail {{ pk }} {% endblock title %}
+
+{% block content %}
+
+<h1 class="list-group">{{pk}}</h1>
+
+<li class="list-group-item">{{object.date}} - {{object.subject}}  - {{object.description}} </li>
+
+{% endblock content %}

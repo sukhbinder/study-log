@@ -26,4 +26,8 @@ class StudyLog(models.Model):
         return "{} {} {} {}".format(self.date, self.subject, self.description)
     
     def get_absolute_url(self):
-        return reverse('detail-view', args=[str(self.id)])
+        return reverse('update-view', args=[str(self.id)])
+
+    def get_user_url(self):
+        return reverse('user-view', args=[str(self.user)])
+

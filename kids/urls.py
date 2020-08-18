@@ -25,4 +25,5 @@ urlpatterns = [
     path('study/create', views.LogCreationView.as_view(), name="create-view"),
     path('study/<int:pk>', views.LogDetailView.as_view(), name="detail-view"),
     path('<str:user>', views.UserListView.as_view(), name="user-view"),
+    path('study/<int:pk>/update', views.StudyUpdateView.as_view(), name="update-view"),
 ]

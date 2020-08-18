@@ -1,9 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}  Study Log {% endblock title %}
+
+{% block content %}
+
 <h1>Study Log</h1>
-<ul>
+
+<p><a href={% url "create-view"  %}> Add Log</a></p>
+<ul class="list-group">
 {% for object in object_list %}
-<li><a href="{{ exp.get_absolute_url }}">{{object.date}} - {{object.user|upper}} </a>- {{object.subject}}  - {{object.description}} - {{object.next_review_date}} </li>
+<li class="list-group-item"><a href="{{ object.get_absolute_url }}">{{object.date}} </a> 
+    - <a href="{{ object.get_user_url }}"> {{object.user|upper}}</a> - {{object.subject}}  - {{object.description}} </li>
 
 {% endfor %}
 </ul>
 
 <a href={% url "create-view"  %}> Add Log</a>
+
+{% endblock content %}
