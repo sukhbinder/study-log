@@ -4,9 +4,9 @@
 
 {% block content %}
 
+<div class="jumbotron">
 <h1>Study Log</h1>
-
-<p><a href={% url "create-view"  %}> Add Log</a></p>
+</div>
 <ul class="list-group">
 {% for object in object_list %}
 <li class="list-group-item"><a href="{{ object.get_absolute_url }}">{{object.date}} </a> 

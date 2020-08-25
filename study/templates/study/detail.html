@@ -3,8 +3,10 @@
 {% block title %}  Detail {{ pk }} {% endblock title %}
 
 {% block content %}
-
+<div class="jumbotron">
 <h1 class="list-group">{{pk}}</h1>
+</div>
+
 
 <li class="list-group-item">{{object.date}} - {{object.subject}}  - {{object.description}} </li>
 
