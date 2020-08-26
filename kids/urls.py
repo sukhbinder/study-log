@@ -21,6 +21,7 @@ from study import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexListView.as_view(), name="index-view"),
+    path('dashboard/', views.DashboardView, name="dash-view"),
     path('study/', views.IndexListView.as_view(), name="index-view"),
     path('study/create', views.LogCreationView.as_view(), name="create-view"),
     path('study/<int:pk>', views.LogDetailView.as_view(), name="detail-view"),
